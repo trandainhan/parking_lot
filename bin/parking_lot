@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]
+then
+  parking_lot
+else
+  parking_lot $1
+fi
+
