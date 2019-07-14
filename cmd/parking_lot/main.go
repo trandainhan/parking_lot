@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"parking_lot/internal/parking"
+	"parking_lot/internal/utils"
 )
 
 func main() {
@@ -13,7 +14,7 @@ func main() {
 	args := flag.Args()
 	if len(args) > 0 { // Run program from file
 		inputFile := args[0]
-		commands := LoadCmd(inputFile)
+		commands := utils.LoadCmd(inputFile)
 		result := parking.ProcessMultipleCommand(commands)
 		fmt.Println(result)
 	} else { // Run program as interactive shell
