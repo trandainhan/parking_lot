@@ -32,6 +32,14 @@ func TestLeave(t *testing.T) {
 	assert.Equal(t, msg, "Slot number 1 is free", "Sucessfully leaving a car")
 }
 
+func TestStatus(t *testing.T) {
+	msg = parkingLot.Status()
+	expected := `Slot No.    Registration No    Colour
+2           456                White
+3           789                Black`
+	assert.Equal(t, msg, expected, "Should print correct status")
+}
+
 func TestSlotsNumberOfCarWithColour(t *testing.T) {
 	msg := parkingLot.SlotsNumberOfCarWithColour("White")
 	assert.Equal(t, msg, "2", "Should return correct slot")
@@ -45,7 +53,7 @@ func TestSlotsNumberOfCarWithColour(t *testing.T) {
 }
 
 func TestSlotsNumberOfReg(t *testing.T) {
-	msg := parkingLot.SlotsNumberOfReg("456")
+	msg = parkingLot.SlotsNumberOfReg("456")
 	assert.Equal(t, msg, "2", "Should return correct slot")
 
 	msg = parkingLot.SlotsNumberOfCarWithColour("000")
@@ -53,7 +61,7 @@ func TestSlotsNumberOfReg(t *testing.T) {
 }
 
 func TestRegNumberForCarWithColour(t *testing.T) {
-	msg := parkingLot.RegNumberForCarWithColour("White")
+	msg = parkingLot.RegNumberForCarWithColour("White")
 	assert.Equal(t, msg, "123, 456", "Should return correct slot")
 
 	msg = parkingLot.RegNumberForCarWithColour("000")

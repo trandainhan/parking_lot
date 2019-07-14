@@ -23,9 +23,6 @@ func main() {
 			if cmd == "exit" {
 				break
 			}
-			if len(cmd) == 0 {
-				continue
-			}
 			response := parking.ProcessCommand(cmd)
 			fmt.Println(response)
 		}
