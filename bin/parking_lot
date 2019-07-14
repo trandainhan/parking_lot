@@ -5,4 +5,3 @@ then
 else
   parking_lot $1
 fi
-

@@ -1,7 +1,11 @@
 # Add script to:
 # * Install dependencies
 # * Build/Compile
-go get github.com/stretchr/testify/assert
+echo "install dependencies for testing"
+go get -v github.com/stretchr/testify/assert
+echo "Build program..."
 go install ./...
 # * Run Test Suit to validate
-go test ./...
+echo "Run test"
+go test ./test/parking
+go test ./test/utils
