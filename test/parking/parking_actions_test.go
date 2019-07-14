@@ -14,7 +14,8 @@ var (
 
 func TestMain(m *testing.M) {
 	parkingLot = NewParkingLot(3)
-	os.Exit(m.Run())
+	code := m.Run()
+	os.Exit(code)
 }
 
 func TestParking(t *testing.T) {

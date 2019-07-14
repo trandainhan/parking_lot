@@ -6,6 +6,14 @@ import (
 	"testing"
 )
 
+func TestMultipleCommand(t *testing.T) {
+	cmd := []string{"create_parking_lot 1", "park KA-01-HH-1234 White"}
+	msg := ProcessMultipleCommand(cmd)
+	expected := "Created a parking lot with 1 slots\nAllocated slot number: 1"
+	assert.Equal(t, msg, expected, "Test multiple command")
+	ResetParkingLot()
+}
+
 func TestProcessComand(t *testing.T) {
 	msg := ProcessCommand("leave 1")
 	assert.Equal(t, msg, "ParkingLot haven't been setup yet")

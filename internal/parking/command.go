@@ -18,6 +18,8 @@ const (
 	EXIT                           = "exit"
 )
 
+var parkingLot *ParkingLot
+
 func ProcessMultipleCommand(cmds []string) string {
 	var result []string
 	for _, cmd := range cmds {
@@ -26,8 +28,6 @@ func ProcessMultipleCommand(cmds []string) string {
 	}
 	return strings.Join(result, "\n")
 }
-
-var parkingLot *ParkingLot
 
 func ProcessCommand(cmd string) string {
 	cmdSplited := strings.Split(cmd, " ")
@@ -92,6 +92,10 @@ func ProcessCommand(cmd string) string {
 
 func GetParkingLot() *ParkingLot {
 	return parkingLot
+}
+
+func ResetParkingLot() {
+	parkingLot = nil
 }
 
 func isParkingLotSetup(parkingLot *ParkingLot) error {
