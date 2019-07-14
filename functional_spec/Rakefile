@@ -1,0 +1,6 @@
+require "rspec/core/rake_task"
+
+namespace :spec do
+  desc "Run the functional suite against the CLI"
+  RSpec::Core::RakeTask.new(:functional)
+end

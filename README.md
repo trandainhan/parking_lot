@@ -27,3 +27,10 @@ Go offers excellent built-in `testing` package, to run the tests.
 - `cd test`
 - Run `go test ./...` to run all tests.
 - To run specific test, just go into a specific folder (`test/parking` or `test/utils`) then run `go test`.
+
+## functional_spec
+
+I'm not sure why the functional_spec doesnt to work on this case,
+so i modified the code a bit by removing `set_path` in rake task,
+because the executable parking_lot file already in the PATH environment if you follow instructions above.
+You guys might want to verify the solution, so i check in this folder as well
